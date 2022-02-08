@@ -1,3 +1,22 @@
+# Money Tracker
+
+This is a simple interface for a google sheet. I use an envelope system and write expenses in my google sheet.
+This interface makes it nice to quickly view how much I can spend out of each envelope.
+
+## Env vars
+
+```env
+GOOGLE_SHEET_ID=
+GOOGLE_CLIENT_EMAIL=
+GOOGLE_PRIVATE_KEY=
+```
+
+## Setup
+
+Once you've create the google sheet api key you much invite the attached users email to the sheet you would like to use.
+
+---
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
