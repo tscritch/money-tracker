@@ -28,7 +28,7 @@ export function getEnvelopeAmounts(auth: any): Promise<Record<string, number>> {
     sheets.spreadsheets.values.get(
       {
         spreadsheetId: process.env.GOOGLE_SHEET_ID,
-        range: `${month}!A1:W1`,
+        range: `${month}!A1:AC1`,
       },
       (err, res) => {
         if (err) return console.log("The API returned an error: " + err);

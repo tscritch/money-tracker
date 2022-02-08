@@ -49,6 +49,10 @@ const colors: Record<string, { color: string; icon: React.ReactNode }> = {
     color: "bg-orange-200",
     icon: <Supplimental className="h-6 w-6 fill-orange-600" />,
   },
+  other: {
+    color: "bg-indigo-200",
+    icon: <Extra className="h-6 w-6 fill-indigo-600" />,
+  },
 };
 
 interface Props {
@@ -64,15 +68,19 @@ const Home: NextPage<Props> = ({ envelopeAmounts, error }) => {
     </div>;
   }
   const envelopes = Object.keys(envelopeAmounts).map((key) => {
+    let color = colors[key];
+    if (!color) {
+      color = colors.other;
+    }
     return (
       <div
         key={key}
         className="drop-shadow-lg bg-white rounded-lg flex justify-between items-center w-full p-3 m-1"
       >
         <div
-          className={`${colors[key].color} rounded-lg w-16 h-14 flex justify-center items-center`}
+          className={`${color.color} rounded-lg w-16 h-14 flex justify-center items-center`}
         >
-          {colors[key].icon}
+          {color.icon}
         </div>
         <h1 className="font-bold text-sm text-left grow px-4">{key}</h1>
         <div
